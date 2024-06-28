@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Coupon</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Coupon</h1>
+        <form id="couponForm">
+            <label for="orgName">Organization Name*:</label>
+            <input type="text" id="orgName"required oninput="updateCouponPreview()" placeholder="NoveltyVR">
+
+            <label for="deal">Discount/Deal*:</label>
+            <input type="text" id="deal"required oninput="updateCouponPreview()" placeholder="55% off on all services">
+
+            <label for="expiryDate">Expiry Date*:</label>
+            <input type="date" id="expiryDate"required oninput="updateCouponPreview()">
+        </form>
+
+        <div class="preview">
+            <h2>Coupon Preview</h2>
+            <canvas id="couponCanvas" width="700px" height="200px"></canvas>
+        </div>
+
+        <button id="downloadCoupon" style="display: none;" onclick="downloadCoupon()">Download Coupon</button>
+    </div>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
